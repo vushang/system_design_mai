@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build: .
+    container_name: fastapi_server
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - SECRET_KEY=your-secret-key
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
